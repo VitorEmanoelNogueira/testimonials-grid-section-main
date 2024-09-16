@@ -20,8 +20,51 @@
     padding: 0em;
 }
 
+body{
+  padding: 2.5rem;
+  background-color: var(--lightGrayishBlue)
+}
 
+main{
+  display: flex;
+  flex-flow: column;
+}
 
+.testimonial{
+  padding: 2rem;
+  margin: 1.2rem 0rem;
+  border-radius: 0.6rem;
+
+  & img{
+    border-radius: 50%;
+    width: 3rem;
+    
+  }
+
+  & .name{
+   display: inline-block;
+  }
+}
+
+.testimonial:nth-child(1){
+  background-color: var(--violet);
+}
+
+.testimonial:nth-child(2){
+  background-color: var(--darkGrayishBlue);
+}
+
+.testimonial:nth-child(3){
+  background-color: var(--white);
+}
+
+.testimonial:nth-child(4){
+  background-color: var(--darkBlackishBlue);
+}
+
+.testimonial:nth-child(5){
+  background-color: var(--white);
+}
 
 .attribution {
     font-size: 1.1rem;
