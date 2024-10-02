@@ -10,10 +10,11 @@
     --lightGrayishBlue: hsl(210, 46%, 95%); 
 
     --barlow: "Barlow Semi Condensed", sans-serif;
-    --fontBody: 1.3rem;
     --w5: 500;
     --w6: 600;
 }
+
+/*É PRA IR MEXER NA VERSÃO DE DESKTOP AGORA!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 *{
     margin: 0em;
@@ -21,33 +22,80 @@
 }
 
 body{
-  padding: 2.5rem;
-  background-color: var(--lightGrayishBlue)
+  padding: 5rem 2rem;
+  background-color: var(--lightGrayishBlue);
+
+}
+::-webkit-scrollbar{
+  display: none;
 }
 
 main{
   display: flex;
   flex-flow: column;
+  font: normal var(--w5) 1.3rem/150% var(--barlow), sans-serif;
 }
 
 .testimonial{
-  padding: 2rem;
+  padding: 2.5rem 3.6rem;
   margin: 1.2rem 0rem;
-  border-radius: 0.6rem;
-
-  & img{
-    border-radius: 50%;
-    width: 3rem;
-    
-  }
-
-  & .name{
-   display: inline-block;
-  }
+  border-radius: 0.8rem;
 }
 
+.profile{
+  display: grid;
+  grid-template-columns: auto 7fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 0em 1em;
+
+  & img{
+    grid-area: 1 / 1 / 3 / 2;
+    border-radius: 50%;
+    width: 3.3rem;
+  }
+  & .name{
+    grid-area: 1 / 2 / 2 / 3;
+    font-weight: var(--w6);
+  }
+
+  & .desc{
+    grid-area: 2 / 2 / 3 / 3;
+    margin: -0.2em 0em;
+    opacity: 0.5;
+  }
+
+}
+
+h2{
+  font-size: 2rem;
+  font-weight: var(--w5);
+  line-height: 125%;
+  max-width: 45ch;
+  margin: 1.5rem 0rem;
+}
+
+.review{
+  opacity: 0.5;
+}
+
+.white{color: var(--white);}
+
+.blue{color: var(--darkGrayishBlue)}
+
 .testimonial:nth-child(1){
-  background-color: var(--violet);
+  background: var(--violet) url(../images/bg-pattern-quotation.svg) no-repeat scroll top right;
+  background-size: 33%;
+  background-position-x: 89%;
+
+    
+  & img{
+    border: 0.2rem solid hsl(263, 39%, 67%)
+  }
+
+  & .review{
+    opacity: 0.5
+  }
+
 }
 
 .testimonial:nth-child(2){
@@ -56,14 +104,26 @@ main{
 
 .testimonial:nth-child(3){
   background-color: var(--white);
+
+  & .review{
+    font-weight: var(--w6);
+    opacity: 0.7
+  }
 }
 
 .testimonial:nth-child(4){
   background-color: var(--darkBlackishBlue);
+  & img{
+    border: 0.2rem solid var(--violet)
+  }
 }
 
 .testimonial:nth-child(5){
   background-color: var(--white);
+  
+  & h2{
+    font-weight: var(--w6);
+  }
 }
 
 .attribution {
@@ -73,4 +133,48 @@ main{
 
   .attribution a {
     color: hsl(228, 45%, 44%);
+  }
+
+  @media screen and (min-width: 998px) {
+    main{
+      display: grid;
+      grid-template-columns: 2fr 2fr 2fr 2fr;
+      grid-template-rows: 1fr 1fr;
+      grid-gap: 3rem;
+      padding: 5em;
+    }    
+
+    .testimonial{
+      margin: 0rem;
+    }
+
+    h2{
+      max-width: fit-content;
+    }
+
+    .review{
+      margin-top: 2rem;
+    }
+
+    .testimonial:nth-child(1){
+      grid-area: 1 / 1 / 2 / 3;
+      background-size: 20%;
+      background-position-x: 80%;
+    }
+    
+    .testimonial:nth-child(2){
+      grid-area: 1 / 3 / 2 / 4;
+    }
+    
+    .testimonial:nth-child(3){
+      grid-area: 2 / 1 / 3 / 2;
+    }
+    
+    .testimonial:nth-child(4){
+      grid-area: 2 / 2 / 3 / 4;
+    }
+    
+    .testimonial:nth-child(5){
+      grid-area: 1 / 4 / 3 / 5;
+    }
   }
