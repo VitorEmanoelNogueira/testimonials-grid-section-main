@@ -23,11 +23,11 @@
 
 body{
   padding: 6rem 2rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
   background-color: var(--lightGrayishBlue);
-
-}
-::-webkit-scrollbar{
-  display: none;
 }
 
 main{
@@ -168,10 +168,10 @@ h2{
   @media screen and (min-width: 998px) {
     main{
       display: grid;
-      grid-template-columns: 2fr 2fr 2fr 2fr;
-      grid-template-rows: 1fr 1fr;
-      grid-gap: 3rem;
+      grid-template-columns: repeat(4, 1fr);grid-template-rows: repeat(2, 1fr);
+      grid-gap: 2.5rem;
       padding: 0rem;
+      max-width: 1200px;
     }    
 
     .testimonial{
